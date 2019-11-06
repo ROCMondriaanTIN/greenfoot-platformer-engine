@@ -18,7 +18,7 @@ public class TileEngine {
 
     private World world;
     private int[][] map;
-    private Tile[][] generateMap;
+    private BasicTile[][] generateMap;
     private TileFactory tileFactory;
 
     /**
@@ -65,7 +65,7 @@ public class TileEngine {
         this.map = map;
         MAP_HEIGHT = this.map.length;
         MAP_WIDTH = this.map[0].length;
-        this.generateMap = new Tile[MAP_HEIGHT][MAP_WIDTH];
+        this.generateMap = new BasicTile[MAP_HEIGHT][MAP_WIDTH];
         this.generateWorld();
     }
 
@@ -83,7 +83,7 @@ public class TileEngine {
      * Removes al the tiles from the world.
      */
     public void clearTilesWorld() {
-        List<Tile> removeObjects = this.world.getObjects(Tile.class);
+        List<BasicTile> removeObjects = this.world.getObjects(BasicTile.class);
         this.world.removeObjects(removeObjects);
         this.map = null;
         this.generateMap = null;
@@ -106,7 +106,7 @@ public class TileEngine {
                 }
                 // Als de mapIcon -1 is dan wordt de code hieronder overgeslagen
                 // Dus er wordt geen tile aangemaakt. -1 is dus geen tile;
-                Tile createdTile = this.tileFactory.createTile(mapIcon);
+                BasicTile createdTile = this.tileFactory.createTile(mapIcon);
 
                 createdTile.setMapID(mapID);
                 createdTile.setMapIcon(mapIcon);
@@ -124,7 +124,7 @@ public class TileEngine {
      * @param colom The colom where the tile exist in the map
      * @param row The row where the tile exist in the map
      */
-    public void addTileAt(Tile tile, int colom, int row) {
+    public void addTileAt(BasicTile tile, int colom, int row) {
         // De X en Y positie zitten het midden van de Actor. 
         // De tilemap genereerd een wereld gebaseerd op dat de X en Y
         // positie links boven in zitten. Vandaar de we de helft van de 
@@ -146,7 +146,7 @@ public class TileEngine {
      * @return The tile at the location colom and row. Returns null if it cannot
      * find a tile.
      */
-    public Tile getTileAt(int colom, int row) {
+    public BasicTile getTileAt(int colom, int row) {
         if (row < 0 || row >= MAP_HEIGHT || colom < 0 || colom >= MAP_WIDTH) {
             return null;
         }
@@ -161,11 +161,11 @@ public class TileEngine {
      * @return The tile at the location colom and row. Returns null if it cannot
      * find a tile.
      */
-    public Tile getTileAtXY(int x, int y) {
+    public BasicTile getTileAtXY(int x, int y) {
         int col = getColumn(x);
         int row = getRow(y);
 
-        Tile tile = getTileAt(col, row);
+        BasicTile tile = getTileAt(col, row);
         return tile;
     }
 
@@ -180,7 +180,7 @@ public class TileEngine {
         if (row < 0 || row >= MAP_HEIGHT || colom < 0 || colom >= MAP_WIDTH) {
             return false;
         }
-        Tile tile = this.generateMap[row][colom];
+        BasicTile tile = this.generateMap[row][colom];
         if (tile != null) {
             this.world.removeObject(tile);
             this.generateMap[row][colom] = null;
@@ -209,7 +209,7 @@ public class TileEngine {
      * @param tile Tile from the tilemap
      * @return true if the tile has successfully been removed
      */
-    public boolean removeTile(Tile tile) {
+    public boolean removeTile(BasicTile tile) {
         int colom = tile.getColom();
         int row = tile.getRow();
         if (colom != -1 && row != -1) {
@@ -227,7 +227,7 @@ public class TileEngine {
      * @return Tile at location is solid
      */
     public boolean checkTileSolid(int x, int y) {
-        Tile tile = getTileAtXY(x, y);
+        BasicTile tile = getTileAtXY(x, y);
         if (tile != null && tile.isSolid) {
             return true;
         }

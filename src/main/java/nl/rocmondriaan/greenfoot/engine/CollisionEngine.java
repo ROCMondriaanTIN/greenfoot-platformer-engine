@@ -14,7 +14,7 @@ public class CollisionEngine {
     private final Camera camera;
     private final TileEngine tileEngine;
     private final List<Mover> collidingActors;
-    private final List<Tile> collidingTiles;
+    private final List<BasicTile> collidingTiles;
 
     /**
      * The constructor of the CollisionEngine.
@@ -56,10 +56,10 @@ public class CollisionEngine {
      */
     public void update() {
         for (Mover mover : this.collidingActors) {
-            List<Tile> tiles = getCollidingTiles(mover, false);
+            List<BasicTile> tiles = getCollidingTiles(mover, false);
 
             if (!tiles.isEmpty()) {
-                for (Tile tile : tiles) {
+                for (BasicTile tile : tiles) {
                     boolean resolved = resolve(mover, tile);
 //                    if(resolved) {
 //                        break;
@@ -109,10 +109,10 @@ public class CollisionEngine {
      * @param midY   The middle y position
      * @return Returns a list of tiles that are located on those positions.
      */
-    public List<Tile> getCollidingTiles(int top, int left, int right, int bottom, int midX, int midY, boolean addNoneSolid) {
+    public List<BasicTile> getCollidingTiles(int top, int left, int right, int bottom, int midX, int midY, boolean addNoneSolid) {
         collidingTiles.clear();
 
-        Tile tile = tileEngine.getTileAtXY(left, top);
+        BasicTile tile = tileEngine.getTileAtXY(left, top);
         if (tile != null && (addNoneSolid || tile.isSolid)) {
             collidingTiles.add(tile);
         }
@@ -170,7 +170,7 @@ public class CollisionEngine {
      *                     list
      * @return A List of overlapping tiles.
      */
-    public List<Tile> getCollidingTiles(Mover mover, boolean addNoneSolid) {
+    public List<BasicTile> getCollidingTiles(Mover mover, boolean addNoneSolid) {
         int actorLeft = getActorLeft(mover);
         int actorRight = getActorRight(mover);
         int actorTop = getActorTop(mover);
@@ -185,7 +185,7 @@ public class CollisionEngine {
      * @param tile  A Tile class or a extend of it.
      * @return Returns a true if the overlap was resolved.
      */
-    public boolean resolve(Mover mover, Tile tile) {
+    public boolean resolve(Mover mover, BasicTile tile) {
         int left = getActorLeft(mover);
         int right = getActorRight(mover);
         int top = getActorTop(mover);

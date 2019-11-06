@@ -48,9 +48,9 @@ public class DemoHero extends Mover {
             }
         }
 
-        List<Tile> tiles = collisionEngine.getCollidingTiles(this, true);
+        List<BasicTile> tiles = collisionEngine.getCollidingTiles(this, true);
 
-        for (Tile tile : tiles) {
+        for (BasicTile tile : tiles) {
             if (tile != null) {
                 if (tile.type == TileType.WATER) {
                     getWorld().removeObject(this);

@@ -159,7 +159,7 @@ public class Camera extends Actor {
         int offsetX = -this.getX() + startCol * TileEngine.TILE_WIDTH;
         int offsetY = -this.getY() + startRow * TileEngine.TILE_HEIGHT;
 
-        Tile currentTile;
+        BasicTile currentTile;
         int x = 0;
         int y = 0;
         for (y = 0; y < TileEngine.MAP_HEIGHT; y++) {
