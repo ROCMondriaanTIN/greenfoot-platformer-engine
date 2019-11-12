@@ -1,6 +1,6 @@
 package nl.rocmondriaan.greenfoot.demo;
 
-import nl.rocmondriaan.greenfoot.engine.Tile;
+import nl.rocmondriaan.greenfoot.engine.BasicTile;
 import nl.rocmondriaan.greenfoot.engine.TileEngine;
 import nl.rocmondriaan.greenfoot.engine.TileFactory;
 import nl.rocmondriaan.greenfoot.engine.TileType;
@@ -18,82 +18,82 @@ public class DemoTileFactory extends TileFactory {
      * @return 
      */
     @Override
-    public Tile createTile(int mapIcon) {
-        Tile tile;
+    public BasicTile createTile(int mapIcon) {
+        BasicTile tile;
         switch (mapIcon) {
             case 0:
-                tile = new Tile("box.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.BOX);
+                tile = new BasicTile("box.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.BOX);
                 tile.isSolid = true;
                 break;
             case 1:
-                tile = new Tile("boxAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.BOX);
+                tile = new BasicTile("boxAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.BOX);
                 tile.isSolid = true;
                 break;
             case 2:
-                tile = new Tile("boxCoin.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new BasicTile("boxCoin.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                 break;
             case 3:
-                tile = new Tile("boxExplosive.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new BasicTile("boxExplosive.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                 break;
             case 4:
-                tile = new Tile("boxItem.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new BasicTile("boxItem.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                 break;
             case 5:
-                tile = new Tile("bridgeLogs.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new BasicTile("bridgeLogs.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.getImage().mirrorVertically();
                 tile.isSolid = true;
                 break;
             case 6:
                 // Toevoegen van een TileType
-                tile = new Tile("grassCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
+                tile = new BasicTile("grassCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
                 tile.isSolid = true;
                 break;
             case 7:
-                tile = new Tile("grassLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
+                tile = new BasicTile("grassLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
                 tile.isSolid = true;
                 break;
             case 8:
-                tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
+                tile = new BasicTile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
                 tile.isSolid = true;
                 break;
             case 9:
-                tile = new Tile("grassRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
+                tile = new BasicTile("grassRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
                 tile.isSolid = true;
                 break;
             case 10:
-                tile = new Tile("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.WATER);
+                tile = new BasicTile("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.WATER);
                 break;
             case 11:
-                tile = new Tile("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.WATER);
+                tile = new BasicTile("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.WATER);
                 break;
             case 12:
-                tile = new Tile("signExit.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new BasicTile("signExit.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 13:
-                tile = new Tile("signLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new BasicTile("signLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 14:
-                tile = new Tile("signRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new BasicTile("signRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             case 15:
-                tile = new Tile("grassHillLeft2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
+                tile = new BasicTile("grassHillLeft2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
                 tile.isSolid = true;
                 break;
             case 16:
-                tile = new Tile("grassHillRight2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
+                tile = new BasicTile("grassHillRight2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
                 tile.isSolid = true;
                 break;
             case 17:
-                tile = new Tile("grassHillLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
+                tile = new BasicTile("grassHillLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
                 tile.isSolid = true;
                 // Experimental
                 tile.setSlope(true);
                 break;
             case 18:
-                tile = new Tile("grassHillRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
+                tile = new BasicTile("grassHillRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
                 tile.isSolid = true;
                 // Experimental
                 tile.setSlope(true);
@@ -101,7 +101,7 @@ public class DemoTileFactory extends TileFactory {
                 tile.setSlopeX(-1);
                 break;
             default:
-                tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
+                tile = new BasicTile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, TileType.GROUND);
                 tile.isSolid = true;
                 break;
         }
