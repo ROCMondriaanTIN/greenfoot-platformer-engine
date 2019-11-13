@@ -1,6 +1,6 @@
 # Greenfoot Platformer engine
 In deze git repository vind je de basis code van je greenfoot project. Dit project kan je openen IntelliJ. 
-Nadat je dit project hebt geopent moet je de App.java klasse instellen als main zodat je het project kan starten.
+Nadat je dit project hebt geopend moet je de App.java klasse instellen als main zodat je het project kan starten.
 
 In deze repo vind je de package `demo` en de package `engine` deze mogen jullie niet aanpassen in het geval wij updates 
 willen uitbrengen.
